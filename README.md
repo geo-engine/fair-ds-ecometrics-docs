@@ -1,4 +1,4 @@
-# FAIR-DS Demonstrator: Copernicus Data SpaceMachine Learning - ECOMETRICS
+# FAIR-DS Demonstrator: Copernicus Data Space Machine Learning - ECOMETRICS
 
 The ECOMETRICS app is a demonstrator for the FAIR-DS project.
 This document presents the software architecture.
@@ -48,6 +48,19 @@ The connectors are able to browser metadata and access the raw data for analysis
 They map the files to the Geo Engine data model that supports temporal and spatial queries.
 The processing engine harmonizes and enriches the data and makes it ready for machine learning.
 Standardized and custom API methods make the data available.
+
+#### Aruna Data Connector
+
+The Aruna data connector implements the Geo Engine data provider interface.
+It uses the Aruna RPC API to browse, find, and access data from the NFDI4Biodiversity data space using the Aruna data storage system.
+By performing the translation between the Aruna API and the Geo Engine API, the connector allows to use data from the NFDI4Biodiversity data space in the Geo Engine platform.
+This makes it possible to integrate the data easily into new analyses and dashboards.
+
+#### Copernicus Data Space Ecosystem Data Connector
+
+The Copernicus Data Space Ecosystem data connector implements the Geo Engine data provider interface.
+It uses the STAC API to browse, find, and access data from the Copernicus Data Space Ecosystem.
+It loads the satellite data using S3 and makes it available in the Geo Engine platform.
 
 ### Machine Learning in Jupyter
 
