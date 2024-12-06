@@ -1,0 +1,51 @@
+flowchart TB
+    %% Data Spaces
+    subgraph DataSpaces["Data Spaces"]
+        nfdi["NFDI 4 BIODIVERSITY"]
+        copernicus["Copernicus Data Space Ecosystem"]
+    end
+
+    %% Geo Engine Components
+    subgraph GeoEngine["Geo Engine"]
+        subgraph DataConnectors["Data Connectors"]
+            aruna["ARUNA"]
+            stac["STAC"]
+        end
+        processingEngine["Processing Engine"]
+        api["API"]
+
+        subgraph PythonLibrary["Python Library"]
+            pythonLib["Python Library"]
+            scikit["Scikit-learn"]
+            onnx["ONNX"]
+            jupyter["Jupyter"]
+        end
+    end
+
+    %% ECOMETRICS Dashboards
+    subgraph Dashboards["ECOMETRICS Dashboards"]
+        dashboard["Dashboard"]
+    end
+
+    %% Actors
+    user["User"]
+    dataScientist["Data Scientist"]
+
+    %% Connections within Geo Engine
+    nfdi --> aruna
+    copernicus --> stac
+    aruna --> processingEngine
+    stac --> processingEngine
+    processingEngine --> api
+    api --> dashboard
+    api --> pythonLib
+    pythonLib --> scikit
+    pythonLib --> onnx
+    pythonLib --> jupyter
+
+    %% User Interactions
+    user --> dashboard:::interaction["Select area/time and analyze"]
+    dataScientist --> pythonLib:::interaction["Train and refine model"]
+
+    %% Styling for better readability (optional)
+    classDef interaction fill:#f9f,stroke:#333,stroke-width:2px;
