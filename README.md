@@ -73,3 +73,8 @@ The model is stored in the ONNX format and uploaded to the Geo Engine where it i
 The ECOMETRICS Dashboard is an easy-to-use web app that build upon the Geo Engine UI toolkit.
 The dashboard has an interactive map and lets the user select an area and time of interest.
 It has an analysis functionality that triggers the Geo Engine to run the machine learning model.
+
+## API documentation
+
+The API of the ESG Indicator Service demo is documented via OpenAPI.
+The [JSON File](https://ecometrics.app.geoengine.io/api/api-docs/openapi.json) and [Swagger-UI](https://ecometrics.app.geoengine.io/api/swagger-ui/) are available online.
