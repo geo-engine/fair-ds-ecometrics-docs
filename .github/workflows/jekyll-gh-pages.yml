@@ -35,6 +35,11 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Install Mermaid
+        run: |
+          cd ./_site
+          python3 ../scripts/mermaid.py
+          cd -
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
