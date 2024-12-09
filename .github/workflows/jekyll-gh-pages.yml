@@ -37,8 +37,7 @@ jobs:
           destination: ./_site
       - name: Install Mermaid
         run: |
-          ls -l ./_site
-          python3 ./scripts/mermaid.py
+          sudo python3 ./scripts/mermaid.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
